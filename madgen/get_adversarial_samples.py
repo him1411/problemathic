@@ -92,7 +92,7 @@ class AdversarialMathDataGen:
             madgen_packet_2 = {
                     'id':idx+1,
                     'passage':response,
-                    'isAdversarial':False
+                    'isAdversarial':True
                 }
             self.return_data.append(madgen_packet_2)
 
