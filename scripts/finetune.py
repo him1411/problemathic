@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
+"""
+This file is used for finetuning language models and was developed by allenai
+[open-instruct](https://github.com/allenai/open-instruct)
+"""
 
 import argparse
 import logging
