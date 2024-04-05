@@ -3,4 +3,9 @@
 .ipynb
 *.pyc
 .idea
+output
+old_notebooks_scripts
+output_old
+old_dataset
+human_eval_samples
 **/__pycache__/
