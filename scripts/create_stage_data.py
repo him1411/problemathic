@@ -1,11 +1,9 @@
 import os
+import sys
 import json
-import pandas as pd
-
 from dotenv import load_dotenv
-from tqdm.auto import tqdm
-from langchain_core.output_parsers import JsonOutputParser
 
+sys.path.append("./")
 from problemathic import AdversarialMathDataGen
 
 
@@ -19,10 +17,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 root_path = "./"
 trial = True
 
-
 # Set Constants
 input_tuples = [
-    ("./dataset/curated/stage1_train_processed_data.json", "./dataset/processed/json/stage_one.json", 1),
+    # ("./dataset/curated/stage1_train_processed_data.json", "./dataset/processed/json/stage_one_temp.json", 1),
     ("./dataset/curated/stage2_train_processed_data.json", "./dataset/processed/json/stage_two.json", 2),
     ("./dataset/curated/stage3_train_processed_data.json", "./dataset/processed/json/stage_three.json", 3)
     ]
@@ -30,8 +27,10 @@ input_tuples = [
 start_idx=0
 end_idx=-1
 debug=False
-overwrite=False
+overwrite=True
+use_langchain_core=True
 get_explanation=True
+max_retries=3
 
 for input_tuple in input_tuples:
     
@@ -40,9 +39,10 @@ for input_tuple in input_tuples:
     with open(input_path) as f:
         docs = json.load(f)
 
-    madgen = AdversarialMathDataGen(model="openai_chat",
+    madgen = AdversarialMathDataGen(model="openai_gpt4_chat",
                                     api_key=OPENAI_API_KEY, 
-                                    use_langchain=False,
+                                    use_langchain_core=use_langchain_core,
+                                    max_retries=max_retries,
                                     debug=debug)
     madgen.transform(docs=docs,
                      stage_type=stage_type,
