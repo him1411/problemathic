@@ -6,57 +6,71 @@ from tqdm.auto import tqdm
 from typing import Union
 from langchain_core.language_models.base import BaseLanguageModel
 
-from ._chains import MultiStepAdversarialStageOneGeneration, GetExplanation
+from ._chains import MultiStepAdversarialStageOneGeneration, AdversarialGeneration, GetExplanation
 from .models import Model
 
 
 class AdversarialMathDataGen:
     def __init__(self, 
                  model: Union[str, BaseLanguageModel],
-                 use_langchain,
+                 use_langchain_core,
                  api_key,
-                 max_retries=5,
+                 max_retries=1,
                  wait_time=10,
                  debug=False
                  ) -> None:
-        self.use_langchain = use_langchain
+        self.use_langchain = use_langchain_core
         self.debug = debug
 
         # Set Model
-        if model == 'openai_chat':
-            model = Model(use_langchain=use_langchain).get_openai_chat_model(temperature=0.7, 
-                                                    api_key=api_key, 
-                                                    model="gpt-4", 
-                                                    max_tokens=2048)
+        if model == 'openai_gpt4_chat':
+            model = Model(use_langchain=self.use_langchain).get_openai_chat_model(temperature=0.3,
+                                                                             api_key=api_key,
+                                                                             model="gpt-4",
+                                                                             max_tokens=2048)
             self.llm = model
-        elif model == 'openai_completion':
-            model = Model(use_langchain=use_langchain).get_openai_model(temperature=0.7,
-                                                        api_key=api_key, 
-                                                        model="gpt-3.5-turbo-instruct", 
-                                                        max_tokens=2048)
+        elif model == 'openai_gpt4_completion':
+            model = Model(use_langchain=self.use_langchain).get_openai_model(temperature=0.7,
+                                                                             api_key=api_key,
+                                                                             model="gpt-4",
+                                                                             max_tokens=2048)
+            self.llm = model
+        elif model == 'openai_gpt3.5_chat':
+            model = Model(use_langchain=self.use_langchain).get_openai_chat_model(temperature=0.7,
+                                                                                  api_key=api_key,
+                                                                                  model="gpt-3.5-turbo",
+                                                                                  max_tokens=2048)
+            self.llm = model
+        elif model == 'openai_gpt3.5_completion':
+            model = Model(use_langchain=self.use_langchain).get_openai_model(temperature=0.7,
+                                                                             api_key=api_key,
+                                                                             model="gpt-3.5-turbo-instruct",
+                                                                             max_tokens=2048)
             self.llm = model
         elif model == "gemini":
-            if not use_langchain:
+            if not self.use_langchain:
                 print("Current backend only supports with LangChain")
 
-            model = Model().get_google_gemini_chat_model(temperature=0.7,
-                                                        google_api_key=api_key, 
-                                                        model="gemini-pro", 
-                                                        max_tokens=2048)
+            model = Model(use_langchain=self.use_langchain).get_google_gemini_chat_model(temperature=0.7,
+                                                         google_api_key=api_key,
+                                                         model="gemini-pro",
+                                                         max_tokens=2048)
             self.llm = model
         else:
-            self.llm = model
+            try:
+                self.llm = model
+            except:
+                raise Exception('Pass a valid model client or model name')
 
         self.max_retries = max_retries
         self.wait_time = wait_time
         self.stage_one_multi_step_prompt_chain = MultiStepAdversarialStageOneGeneration(
-            from_model=self.llm,
-            use_langchain=use_langchain).get_stage_one_multi_step_prompt_chain()
-        
-        get_explanation = GetExplanation(from_model=self.llm,
-                                         use_langchain=use_langchain)
-        self.simple_explanation_prompt_chain = get_explanation.get_explanation_for_simple_passage_prompt_chain()
-        self.adversary_explanation_prompt_chain = get_explanation.get_explanation_for_adversarial_passage_prompt_chain()
+            from_model=self.llm, use_langchain=self.use_langchain).get_stage_one_multi_step_prompt_chain()
+        self.stage_two_and_three_prompt_chain = AdversarialGeneration(
+            from_model=self.llm, use_langchain=self.use_langchain).get_prompt_chain()
+        self.get_explanation = GetExplanation(from_model=self.llm, use_langchain=self.use_langchain)
+        self.simple_explanation_prompt_chain = self.get_explanation.get_explanation_for_simple_passage_prompt_chain()
+        self.adversary_explanation_prompt_chain = self.get_explanation.get_explanation_for_adversarial_passage_prompt_chain()
     
     def transform(self,
                   docs,
@@ -120,20 +134,27 @@ class AdversarialMathDataGen:
                 final_return_output[input_file_id]["adversary"]["attempt_for_stage_one_step_one"] = first_step_attempts-1
 
                 stage_one_step_two_prompt_chain = self.stage_one_multi_step_prompt_chain[1]
-                second_step_output, second_step_attempts = self.retry(trace_header="StageOneStepTwo", 
-                                                                    input_file_id=input_file_id, 
-                                                                    prompt_or_chain=stage_one_step_two_prompt_chain,
-                                                                    input_dict=first_step_output["text"])
+                second_step_output, second_step_attempts = self.retry(trace_header="StageOneStepTwo",
+                                                                      input_file_id=input_file_id,
+                                                                      prompt_or_chain=stage_one_step_two_prompt_chain,
+                                                                      input_dict=first_step_output["text"])
                         
                 final_return_output[input_file_id]["adversary"]["augmented_passage"] = second_step_output["text"].get("augmented_passage", "CouldNotExtractError")
                 final_return_output[input_file_id]["adversary"]["attempt_for_stage_one_step_two"] = second_step_attempts-1
 
-            if stage_type == 2:
-                pass
+            else:
+                prompt_chain = self.stage_two_and_three_prompt_chain[0]
+                output, attempts = self.retry(trace_header="StageTwoOrThree",
+                                              input_file_id=input_file_id,
+                                              prompt_or_chain=prompt_chain,
+                                              input_dict={"input_passage":sample["passage"]})
+                
+                final_return_output[input_file_id]["adversary"]["new_variable"] = output["text"].get("new_variable", "CouldNotExtract")
+                final_return_output[input_file_id]["adversary"]["start_value"] = output["text"].get("start_value", "CouldNotExtract")
+                final_return_output[input_file_id]["adversary"]["end_value"] = output["text"].get("end_value", "CouldNotExtract")
+                final_return_output[input_file_id]["adversary"]["augmented_passage"] = output["text"].get("augmented_passage", "CouldNotExtractError")
+                final_return_output[input_file_id]["adversary"]["attempt_for_stage_one_step_one"] = attempts-1
 
-            if stage_type == 3:
-                pass
-            
             if get_explanation:
                 # Get Simple Explanation
                 simple_explanation_input_variables = {
@@ -147,7 +168,7 @@ class AdversarialMathDataGen:
                     prompt_or_chain=self.simple_explanation_prompt_chain,
                     input_dict=simple_explanation_input_variables
                     )
-
+ 
                 final_return_output[input_file_id]["simple"]["explanation"] = simple_explanation_step_output["text"].get("simple_solution", "CouldNotExtractError")
                 final_return_output[input_file_id]["simple"]["attempt_explanation"] = simple_explanation_step_attempts-1
                 final_return_output[input_file_id]["simple"]["llm_answer"] = simple_explanation_step_output["text"].get("llm_answer", "CouldNotExtractError")
@@ -156,7 +177,7 @@ class AdversarialMathDataGen:
                 adversary_explanation_input_variables = {
                     "augmented_passage": final_return_output[input_file_id]["adversary"]["augmented_passage"],
                     "question": sample["question"], 
-                    "simple_explanation": final_return_output[input_file_id]["simple"]["llm_answer"],
+                    "simple_explanation": final_return_output[input_file_id]["simple"]["explanation"],
                     "answer": sample["answer"], 
                     "new_variable": final_return_output[input_file_id]["adversary"]["new_variable"], 
                     "start_value": final_return_output[input_file_id]["adversary"]["start_value"],
@@ -169,7 +190,7 @@ class AdversarialMathDataGen:
                     prompt_or_chain=self.adversary_explanation_prompt_chain,
                     input_dict=adversary_explanation_input_variables
                     )
-                
+
                 final_return_output[input_file_id]["adversary"]["relevant_variables_extracted"] = adversary_explanation_step_output["text"].get("relevant_variables", "CouldNotExtractError")
                 final_return_output[input_file_id]["adversary"]["explanation"] = adversary_explanation_step_output["text"].get("adversary_explanation", "CouldNotExtractError")
                 final_return_output[input_file_id]["adversary"]["solution"] = adversary_explanation_step_output["text"].get("adversary_solution", "CouldNotExtractError")
@@ -183,15 +204,37 @@ class AdversarialMathDataGen:
 
     def retry(self, trace_header, input_file_id, prompt_or_chain, input_dict):
         retry_flag = False
+        output_dict = {}
+        output_dict["text"] = {}
         for attempt in range(1, self.max_retries+1):
             if attempt == 1 or retry_flag:
                 try:
+                    if retry_flag and trace_header == "AdversarialExplanation":
+                        # Try parsing using manual logic
+                        print(f"[INFO] Trying manual parse logic after first attempt failed.")
+                        prompt_or_chain_custom = self.get_explanation.get_explanation_for_adversarial_passage_prompt_chain(disable_json_parser=True)
+                        output_dict = prompt_or_chain_custom.invoke(input=input_dict)
+                        text_to_manually_parse = output_dict["text"]
+                        relevant_variables = text_to_manually_parse.split("Explanation:")[0].split("Extracted: ")[-1].strip()
+                        adversary_explanation = text_to_manually_parse.split("Explanation:")[-1].split("Solution: ")[0].strip()
+                        adversary_solution = text_to_manually_parse.split("Explanation:")[-1].split('Solution: ')[-1].split("LLM Answer: ")[0].strip()
+                        llm_answer = text_to_manually_parse.split("Explanation:")[-1].split('Solution: ')[-1].split("LLM Answer: ")[-1].rstrip("'}").strip()
+                        output_dict["text"] = {"relevant_variables": relevant_variables,
+                                               "adversary_explanation": adversary_explanation,
+                                               "adversary_solution": adversary_solution,
+                                               "llm_answer": llm_answer
+                                               }
+                        retry_flag = False
+                        # If the parsing happens without fail, break the loop and return the parsed json.
+                        break
+                        
                     if self.use_langchain:
                         output_dict = prompt_or_chain.invoke(input=input_dict)
                     else:
-                        text_output_to_json = json.loads(self.non_langchain_invoke(prompt_tuple=prompt_or_chain, **input_dict))
-                        output_dict = {}
+                        text_output_to_json = json.loads(self.non_langchain_invoke(prompt_tuple=prompt_or_chain, 
+                                                                                    **input_dict))
                         output_dict["text"] = text_output_to_json
+                
                     retry_flag = False
                     if self.debug:
                         print("ATTEMPT: ", attempt)
@@ -200,10 +243,7 @@ class AdversarialMathDataGen:
                 except Exception as e:
                     retry_flag = True
                     time.sleep(self.wait_time)
-                    print(f"[ERROR] {trace_header} -> {input_file_id}, Attempt: {attempt}, retry_flag: {retry_flag}, Error: {e}")
-                    if attempt == self.max_retries-1:
-                        output_dict = {}
-                        output_dict["text"] = {}
+                    print(f"[ERROR] {trace_header} -> {input_file_id}, Attempt: {attempt}, retry_flag: {retry_flag}, Error: {e}")                        
             else:
                 break
         return output_dict, attempt

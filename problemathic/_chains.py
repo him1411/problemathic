@@ -7,7 +7,7 @@ from langchain_core.language_models.base import BaseLanguageModel
 
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-from langchain_core.output_parsers import JsonOutputParser
+from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 from langchain_core.pydantic_v1 import BaseModel, Field
 
 
@@ -20,6 +20,14 @@ class StageOneStepOneOutputParser(BaseModel):
 
 
 class StageOneStepTwoOutputParser(BaseModel):
+    augmented_passage: str = Field(description="The augmented passage with the new variables ranging from the start and end value.")
+
+
+class AdversarialoOutputParser(BaseModel):
+    new_variable: str = Field(description="""The new variables introduced in the new passage based on the rules. 
+                               Also print the change in the variables values.""")
+    start_value: str = Field(description="The start value with units of the new variable introduced.")
+    end_value: str = Field(description="The end value with units of the new variable introduced.")
     augmented_passage: str = Field(description="The augmented passage with the new variables ranging from the start and end value.")
 
 
@@ -62,7 +70,7 @@ class MultiStepAdversarialStageOneGeneration:
         4. The variable must have a start value and end value.
         If you follow all the rules, you will win $200. If even a single rule is broken, the world will end.
         
-        Example 1:
+        Example:
         Passage:  My car gets 20 miles per gallon.
         Existing Variables: Fuel efficiency
         New Variable: Speed
@@ -147,113 +155,75 @@ class MultiStepAdversarialStageOneGeneration:
 
 
 # Stage Two and Three Generation Chain Class
-class AdversarialStageTwoAndThreeGeneration:
+class AdversarialGeneration:
     def __init__(self, 
                  from_model: BaseLanguageModel,
                  use_langchain, 
                  debug=False
                  ) -> None:
-        self.output_parser = JsonOutputParser(pydantic_object=StageOneStepOneOutputParser)
+        self.output_parser = JsonOutputParser(pydantic_object=AdversarialoOutputParser)
         self.llm = from_model
         self.use_langchain = use_langchain
         self.debug = debug
 
-    def get_stage_one_multi_step_prompt_chain(self, ) -> List:
+    def get_prompt_chain(self, ) -> List:
         """
         TODO: Write detailed description.
         But for now, this method returns the formatted preference 2 for a given sample.
         """
-        step_one_template = """
-        Propose a new variable for this problem.
+        combined_template = """
+        Augment the passage as shown by adding one new variable. 
         Rules:
-        1. The new variable must be one of the following types: [Volume, Humidity, Temperature, Weight, Luminosity, Density, Speed, Area].
-        2. The new variable must not be related to or derived from the existing variables in the passage.
-        3. The new variable must not share the same physical unit as any of the original variables.
-        4. The variable must have a start value and end value.
-        If you follow all the rules, you will win $200. If even a single rule is broken, the world will end.
-        
+        1. The new variable must change values over the course of the augmented passage.
+        2. Old and new value of the new variable should be explicitly mentioned.
+        3. The augmented passage should add numerical information regarding variables not 4. measured or derived from variables in the passage. 
+        4. The new variable must be one of the following types: [Volume, Humidity, Temperature, Weight, Luminosity, Density, Speed, Area]. 
+        5. The new variable type must not be present in the passage before augmentation.
+        6. The new variable must not share the same physical unit as any of the original variables. 
+        7. The new variable must not be related to or derived from the existing variables in the passage.
+        8. The augmented text should not add any numerical information about existing variables that is not already mentioned explicitly in the original passage.
+        9. Add no more than one sentence.
+
         Example 1:
         Passage:  My car gets 20 miles per gallon.
         Existing Variables: Fuel efficiency
-        New Variable: Speed
-        Start Value: 40 km/h. 
-        End Value: 80 km/h
-        Rule 1: New variable is one of the variables mentioned.
-        Rule 2: Speed is not related to fuel efficiency. It also cannot be derived from only fuel efficiency.
-        Rule 3: Speed is not measured in the same unit as fuel efficiency.
-        Rule 4: Start value is 40 km/h, and end value is 80 km/h
-
+        Augmented Passage: My car, which gets 20 miles for each gallon, when I drive at 120 miles per hour. I start going at 10 feet a minute. 
+        New Variables: Speed (changes from 120 to 10)
+    
+        Example 2:
+        Passage:  There are 64 pigs in the barn. Some more came in, now there are 86 pigs.
+        Existing Variables: Number of pigs (changes from 64 to 86)
+        Augmented Passage: In the barn, where the temperature is a cozy 72 degrees Fahrenheit, there are 64 pigs. Some more came in. The temperature goes up to 83 degrees fahrenheit for 86 pigs. 
+        New Variables: Temperature (changes from 72 to 83)
+        
         Passage: {input_passage}
-
-        Additional Output Formatting Instructions:
-        \n{format_instructions}\n
-        """
-
-        step_two_template = """
-        You are given a passage followed by a new variable and its values. 
-        Augment the passage such that the new variable is part of the passage. 
-        Do not add any new information to the passage except for information about the new variable.
-        Example:
-        Passage:  My car gets 20 miles per gallon and was made in 1950.
-        New Variable: Speed
-        Start Value: 40 km/h. End Value: 80 km/h
-        Augmented Passage: My car, which was made in 1950, gets 20 miles per gallon and can accelerate in speed from 40 km/h to 80 km/h.
-
-        Passage: I have 2 pencils. I went out and bought 3 more.
-        New Variable: Weight
-        Start value: 220 gms. End Value: 300 gms.
-        Augmented: I have 2 pencils weighing 220 gms. I went out and bought 3 more. Now my pencils weigh 300 gms.
-        Passage: {input_passage}
-        New Variable: {new_variable}
-        Start Value: {start_value}. End Value: {end_value}
-
+        
         Additional Output Formatting Instructions:
         \n{format_instructions}\n
         """
 
         if self.use_langchain:
-            stage_one_step_one_prompt = PromptTemplate(
+            stage_two_and_three_prompt = PromptTemplate(
                 input_variables=["input_passage"],
-                template=step_one_template,
-                partial_variables={"format_instructions": self.step_one_parser.get_format_instructions()}
+                template=combined_template,
+                partial_variables={"format_instructions": self.output_parser.get_format_instructions()}
                 )
 
-            stage_one_step_two_prompt = PromptTemplate(
-                input_variables=["input_passage", "new_variable", "start_value", "end_value"],
-                template=step_two_template,
-                partial_variables={"format_instructions": self.step_two_parser.get_format_instructions()}
-            )
-
-            stage_one_step_one_chain = LLMChain(llm=self.llm, 
-                                                prompt=stage_one_step_one_prompt, 
-                                                output_parser=JsonOutputParser()
+            stage_two_and_three__chain = LLMChain(llm=self.llm,
+                                                  prompt=stage_two_and_three_prompt,
+                                                  output_parser=JsonOutputParser()
                                                 )
-            stage_one_step_two_chain = LLMChain(llm=self.llm, 
-                                                prompt=stage_one_step_two_prompt, 
-                                                output_parser=JsonOutputParser()
-                                                )
-
-            multi_step_prompt_chain = [stage_one_step_one_chain, stage_one_step_two_chain]
-            return multi_step_prompt_chain
+            return [stage_two_and_three__chain]
         else:
-            stage_one_step_one_prompt = PromptTemplate(
+            stage_two_and_three_prompt = PromptTemplate(
                 input_variables=["input_passage", "format_instructions"],
-                template=step_one_template,
+                template=combined_template,
                 )
 
-            stage_one_step_two_prompt = PromptTemplate(
-                input_variables=["input_passage", "new_variable", "start_value", "end_value", "format_instructions"],
-                template=step_two_template,
-            )
-
-            stage_one_step_one_schema = {f"{key}":"Appropriate Response" for \
-                                              key in self.step_one_parser.pydantic_object.schema()["required"]}
-            stage_one_step_two_schema = {f"{key}":"Appropriate Response" for \
-                                              key in self.step_two_parser.pydantic_object.schema()["required"]}
-            multi_step_prompt_chain =  [(stage_one_step_one_prompt, stage_one_step_one_schema), 
-                                       (stage_one_step_two_prompt, stage_one_step_two_schema)
-                                       ]
-            return multi_step_prompt_chain
+            stage_two_and_three_schema = {f"{key}":"Appropriate Response" for \
+                                              key in self.output_parser.pydantic_object.schema()["required"]}
+            stage_two_and_three_prompt_chain =  (stage_two_and_three_prompt, stage_two_and_three_schema)
+            return [stage_two_and_three_prompt_chain]
 
 
 # Explanation Chain Class
@@ -312,7 +282,7 @@ class GetExplanation:
             return (simple_explanation_prompt, simple_explanation_schema)
         
 
-    def get_explanation_for_adversarial_passage_prompt_chain(self, ) -> LLMChain:
+    def get_explanation_for_adversarial_passage_prompt_chain(self, disable_json_parser=False) -> LLMChain:
         prompt_template = """
         You are given a mathematical problem and some additional metadata. Return the explanation and show the step by step 
         working to start from the problem and arrive at the solution.
@@ -341,7 +311,6 @@ class GetExplanation:
         Output:
 
         Additional Output Formatting Instructions:
-        \n{format_instructions}\n
         """
 
         if self.use_langchain:
@@ -349,12 +318,13 @@ class GetExplanation:
                 template=prompt_template, 
                 input_variables=["augmented_passage", "question", "simple_explanation", 
                                  "answer", "new_variable", "start_value", "end_value"],
+                partial_variables={"format_instructions": self.adversarial_explanation_parser.get_format_instructions()}
             )
 
             adversary_explanation_chain = LLMChain(
                 llm=self.llm,
                 prompt=adversary_explanation_prompt,
-                output_parser=JsonOutputParser()
+                output_parser=StrOutputParser() if disable_json_parser else JsonOutputParser()
             )
             return adversary_explanation_chain
         else:
