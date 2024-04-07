@@ -10,6 +10,6 @@ OPENAI_API_KEY=YOUR_KEY
 ```
 
 ### Step 2: Run the generation script:
-```
+```shell
 python scripts/create_stage_data.py
 ```
