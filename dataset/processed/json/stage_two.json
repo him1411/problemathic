@@ -1,0 +1,26 @@
+[
+  {
+    "passage_0": {
+      "question": "  How much money does Nancy have ?",
+      "answer": "3",
+      "simple": {
+        "passage": "Nancy has saved 1 dozen quarters from washing cars",
+        "explanation": "A dozen is equal to 12. So, Nancy has saved 12 quarters. Since 1 quarter is equal to $0.25, we multiply 12 by 0.25 to find out how much money Nancy has. 12 quarters multiplied by $0.25 equals $3.",
+        "attempt_explanation": 1,
+        "llm_answer": "3"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "20 pounds",
+        "end_value": "30 pounds",
+        "augmented_passage": "Nancy, who weighs 20 pounds, has saved 1 dozen quarters from washing cars. After a hearty meal, her weight goes up to 30 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of quarters (Changes from 0 to 12)",
+        "explanation": "As the problem deals with the amount of money Nancy has, which is determined by the number of quarters she saved, there is no need to consider her weight when calculating the total amount of money.",
+        "solution": "A dozen is equal to 12. So, Nancy has saved 12 quarters. Since 1 quarter is equal to $0.25, we multiply 12 by 0.25 to find out how much money Nancy has. 12 quarters multiplied by $0.25 equals $3.",
+        "llm_answer": "3",
+        "attempt_explanation": 1
+      }
+    }
+  }
+]
