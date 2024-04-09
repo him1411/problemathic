@@ -2302,5 +2302,461 @@
         "attempt_explanation": 1
       }
     }
+  },
+  {
+    "passage_96": {
+      "question": " If he received another 37 dollars for his allowance, how many 8 dollar toys could he buy? ",
+      "answer": "5",
+      "simple": {
+        "passage": " Frank had saved up 3 dollars",
+        "explanation": "First, we add the money Frank had saved (3 dollars) to the money he received for his allowance (37 dollars). This gives us a total of 40 dollars. Then, we divide this total by the cost of one toy (8 dollars) to find out how many toys Frank can buy. 40 divided by 8 equals 5.",
+        "attempt_explanation": 1,
+        "llm_answer": "5"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "10 pounds",
+        "end_value": "20 pounds",
+        "augmented_passage": "Frank had saved up 3 dollars. His piggy bank, initially weighing 10 pounds, now weighs 20 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Amount of money Frank has (Changes from 3 dollars to 40 dollars)",
+        "explanation": "As the problem deals with the amount of money Frank has and how many toys he can buy, there is no need to consider the weight of the piggy bank. We only need to add the money Frank had saved (3 dollars) to the money he received for his allowance (37 dollars) to get the total amount of money he has. Then, we divide this total by the cost of one toy (8 dollars) to find out how many toys Frank can buy.",
+        "solution": "First, we add the money Frank had saved (3 dollars) to the money he received for his allowance (37 dollars). This gives us a total of 40 dollars. Then, we divide this total by the cost of one toy (8 dollars) to find out how many toys Frank can buy. 40 divided by 8 equals 5.",
+        "llm_answer": "5",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_97": {
+      "question": " If each ticket cost 9 dollars, how much money did Adam spend riding the ferris wheel? ",
+      "answer": "81",
+      "simple": {
+        "passage": " At the fair Adam bought 13 tickets.  After riding the ferris wheel he had 4 tickets left",
+        "explanation": "First, we need to find out how many tickets Adam used to ride the ferris wheel. He started with 13 tickets and had 4 left, so he used 13 - 4 = 9 tickets. Then, since each ticket costs 9 dollars, we multiply the number of tickets used (9) by the cost per ticket (9 dollars) to find out how much Adam spent. So, 9 tickets * 9 dollars per ticket = 81 dollars.",
+        "attempt_explanation": 1,
+        "llm_answer": "81"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "200 pounds",
+        "end_value": "210 pounds",
+        "augmented_passage": "At the fair, where Adam's weight is 200 pounds, he bought 13 tickets. After riding the ferris wheel and eating some cotton candy, his weight increased to 210 pounds and he had 4 tickets left.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of tickets (Changes from 13 to 4), Cost per ticket (Constant at 9 dollars)",
+        "explanation": "As the problem deals with the money spent on tickets, we need to consider the number of tickets Adam used and the cost per ticket. The weight change is irrelevant to the calculation of money spent.",
+        "solution": "First, we need to find out how many tickets Adam used to ride the ferris wheel. He started with 13 tickets and had 4 left, so he used 13 - 4 = 9 tickets. Then, since each ticket costs 9 dollars, we multiply the number of tickets used (9) by the cost per ticket (9 dollars) to find out how much Adam spent. So, 9 tickets * 9 dollars per ticket = 81 dollars.",
+        "llm_answer": "81",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_98": {
+      "question": " If her brother, Todd, ate 21 of them how many packages could she make if she put 3 cupcake in each package? ",
+      "answer": "6",
+      "simple": {
+        "passage": " Isabel baked 39 cupcakes for her school's bake sale",
+        "explanation": "Isabel initially had 39 cupcakes. If Todd ate 21 of them, Isabel is left with 39 - 21 = 18 cupcakes. If she puts 3 cupcakes in each package, she can make 18 / 3 = 6 packages.",
+        "attempt_explanation": 1,
+        "llm_answer": "6"
+      },
+      "adversary": {
+        "new_variable": "Temperature",
+        "start_value": "70 degrees Fahrenheit",
+        "end_value": "75 degrees Fahrenheit",
+        "augmented_passage": "Isabel baked 39 cupcakes for her school's bake sale. The kitchen started at a temperature of 70 degrees Fahrenheit and heated up to 75 degrees during the baking process.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of cupcakes (Changes from 39 to 18 after Todd ate some)",
+        "explanation": "As the problem deals with the number of cupcakes, which we already have, there is no need to consider the temperature of the kitchen when counting the total quantity.",
+        "solution": "Isabel initially had 39 cupcakes. If Todd ate 21 of them, Isabel is left with 39 - 21 = 18 cupcakes. If she puts 3 cupcakes in each package, she can make 18 / 3 = 6 packages.",
+        "llm_answer": "6",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_99": {
+      "question": " If they ate 4 pieces the first night, how many pieces do they have left? ",
+      "answer": "63",
+      "simple": {
+        "passage": " For Halloween Janet and her sister combined the candy they received.  Janet had 34 pieces of candy while her sister had 33",
+        "explanation": "First, we add the number of candies Janet and her sister received. Janet had 34 candies and her sister had 33 candies. So, 34 + 33 = 67 candies in total. Then, we subtract the number of candies they ate on the first night, which is 4. So, 67 - 4 = 63 candies left.",
+        "attempt_explanation": 1,
+        "llm_answer": "63"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "50 pounds",
+        "end_value": "60 pounds",
+        "augmented_passage": "For Halloween Janet and her sister combined the candy they received. Janet had 34 pieces of candy while her sister had 33. The combined weight of the candy started at 50 pounds and after adding more, it weighed 60 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of candies (Changes from 34 and 33 to 67, then to 63)",
+        "explanation": "As the problem deals with the number of candies, which we already have, there is no need to consider the weight of the candies when counting the total quantity.",
+        "solution": "First, we add the number of candies Janet and her sister received. Janet had 34 candies and her sister had 33 candies. So, 34 + 33 = 67 candies in total. Then, we subtract the number of candies they ate on the first night, which is 4. So, 67 - 4 = 63 candies left.",
+        "llm_answer": "63",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_100": {
+      "question": " If she finished 40 of the problems at school, how many problems did she have to do for homework? ",
+      "answer": "15",
+      "simple": {
+        "passage": " Faye had 46 math problems and 9 science problems for homework",
+        "explanation": "Faye had a total of 46 math problems and 9 science problems for homework, which makes a total of 55 problems (46 + 9 = 55). If she finished 40 of the problems at school, then she would have 15 problems left to do for homework (55 - 40 = 15).",
+        "attempt_explanation": 1,
+        "llm_answer": "15"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "100 pounds",
+        "end_value": "120 pounds",
+        "augmented_passage": "Faye, who weighs 100 pounds, had 46 math problems and 9 science problems for homework. After completing her homework, she weighs 120 pounds due to the mental exertion.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of problems (Changes from 55 to 15)",
+        "explanation": "As the problem deals with the number of problems Faye had to do for homework, her weight is irrelevant to the solution. We only need to consider the total number of problems and subtract the number she completed at school.",
+        "solution": "Faye had a total of 46 math problems and 9 science problems for homework, which makes a total of 55 problems (46 + 9 = 55). If she finished 40 of the problems at school, then she would have 15 problems left to do for homework (55 - 40 = 15).",
+        "llm_answer": "15",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_101": {
+      "question": " If his fridge would only hold 6 on each shelf, how many shelves would he fill up? ",
+      "answer": "8",
+      "simple": {
+        "passage": " For a birthday party Cody bought 4 regular sodas and 44 diet sodas",
+        "explanation": "First, we need to find out the total number of sodas Cody bought. He bought 4 regular sodas and 44 diet sodas, which totals to 48 sodas (4+44). His fridge can hold 6 sodas on each shelf. So, to find out how many shelves he would fill up, we divide the total number of sodas by the number of sodas each shelf can hold. 48 divided by 6 equals 8. Therefore, Cody would fill up 8 shelves.",
+        "attempt_explanation": 1,
+        "llm_answer": "8"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "200 lbs",
+        "end_value": "250 lbs",
+        "augmented_passage": "For a birthday party Cody bought 4 regular sodas and 44 diet sodas. The total weight of the sodas was initially 200 lbs, but after adding some more it increased to 250 lbs.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of sodas (Changes from 4 and 44 to 48), Number of sodas each shelf can hold (Constant at 6)",
+        "explanation": "As the problem deals with the number of shelves that can be filled, we need to consider the total number of sodas and the capacity of each shelf. The weight of the sodas is irrelevant in this context.",
+        "solution": "First, we need to find out the total number of sodas Cody bought. He bought 4 regular sodas and 44 diet sodas, which totals to 48 sodas (4+44). His fridge can hold 6 sodas on each shelf. So, to find out how many shelves he would fill up, we divide the total number of sodas by the number of sodas each shelf can hold. 48 divided by 6 equals 8. Therefore, Cody would fill up 8 shelves.",
+        "llm_answer": "8",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_102": {
+      "question": " If she only used 10 of the flowers though, how many extra flowers did Katie pick? ",
+      "answer": "2",
+      "simple": {
+        "passage": " Katie picked 3 tulips and 9 roses to make flower bouquets",
+        "explanation": "Katie picked a total of 3 tulips and 9 roses, which makes 12 flowers in total. If she only used 10 of these flowers, then the number of extra flowers she picked is found by subtracting the number of flowers used (10) from the total number of flowers picked (12). So, 12 - 10 equals 2. Therefore, Katie picked 2 extra flowers.",
+        "attempt_explanation": 1,
+        "llm_answer": "2"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "50 pounds",
+        "end_value": "60 pounds",
+        "augmented_passage": "Katie, who weighs 50 pounds, picked 3 tulips and 9 roses to make flower bouquets. After picking the flowers, her weight increased to 60 pounds due to the weight of the flowers.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of flowers (Changes from 0 to 12)",
+        "explanation": "As the problem deals with the number of flowers, which we already have, there is no need to consider the weight of Katie when calculating the number of extra flowers she picked.",
+        "solution": "Katie picked a total of 3 tulips and 9 roses, which makes 12 flowers in total. If she only used 10 of these flowers, then the number of extra flowers she picked is found by subtracting the number of flowers used (10) from the total number of flowers picked (12). So, 12 - 10 equals 2. Therefore, Katie picked 2 extra flowers.",
+        "llm_answer": "2",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_103": {
+      "question": " If each pie takes 9 apples, how many pies could they make? ",
+      "answer": "6",
+      "simple": {
+        "passage": " The cafeteria had 62 apples.  For lunch they handed out 8 to students and decided to use the rest to make pies",
+        "explanation": "First, we need to find out how many apples are left after the cafeteria handed out 8 to students. So, we subtract 8 from 62 which gives us 54. Then, since each pie takes 9 apples, we divide the number of remaining apples (54) by the number of apples per pie (9). This gives us 6 pies.",
+        "attempt_explanation": 1,
+        "llm_answer": "6"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "62 pounds",
+        "end_value": "54 pounds",
+        "augmented_passage": "The cafeteria had 62 apples, weighing a total of 62 pounds. For lunch they handed out 8 to students and decided to use the rest, now weighing 54 pounds, to make pies.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of apples (Changes from 62 to 54), Number of apples per pie (Constant at 9)",
+        "explanation": "As the problem deals with the number of pies that can be made from the remaining apples, the weight of the apples is irrelevant. We need to find out how many apples are left after 8 are handed out, and then determine how many pies can be made from the remaining apples, given that each pie requires 9 apples.",
+        "solution": "First, we subtract the 8 apples handed out from the initial 62 apples, which leaves us with 54 apples. Then, we divide the number of remaining apples (54) by the number of apples per pie (9). This gives us 6 pies.",
+        "llm_answer": "6",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_104": {
+      "question": " How many folders did Wendy end up with? ",
+      "answer": "9",
+      "simple": {
+        "passage": " Wendy had 82 files on her computer.  She deleted 37 of them and put the rest into folders with 5 files in each one",
+        "explanation": "First, we need to find out how many files Wendy had left after deleting some. She started with 82 files and deleted 37, so she had 82 - 37 = 45 files left. Then, since she put these files into folders with 5 files in each one, we divide the number of files by the number of files per folder to find the number of folders. So, 45 / 5 = 9 folders.",
+        "attempt_explanation": 1,
+        "llm_answer": "9"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "500 kg",
+        "end_value": "400 kg",
+        "augmented_passage": "Wendy had 82 files on her computer, which weighed 500 kg. She deleted 37 of them and put the rest into folders with 5 files in each one, reducing the weight to 400 kg.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of files (Changes from 82 to 45), Number of files per folder (Constant at 5)",
+        "explanation": "As the problem deals with the number of folders, which is dependent on the number of files and the number of files per folder, there is no need to consider the weight of the files when calculating the total number of folders.",
+        "solution": "First, we need to find out how many files Wendy had left after deleting some. She started with 82 files and deleted 37, so she had 82 - 37 = 45 files left. Then, since she put these files into folders with 5 files in each one, we divide the number of files by the number of files per folder to find the number of folders. So, 45 / 5 = 9 folders.",
+        "llm_answer": "9",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_105": {
+      "question": " If she graded 4, but then another 18 were turned in, how many worksheets would she have to grade? ",
+      "answer": "20",
+      "simple": {
+        "passage": " A teacher had 6 worksheets to grade",
+        "explanation": "The teacher initially had 6 worksheets to grade. She graded 4, leaving her with 2 worksheets. Then, 18 more worksheets were turned in. So, to find the total number of worksheets she has to grade, we add the remaining worksheets (2) and the new worksheets (18). 2 and 18 make 20.",
+        "attempt_explanation": 1,
+        "llm_answer": "20"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "200 pounds",
+        "end_value": "250 pounds",
+        "augmented_passage": "A teacher had 6 worksheets to grade. Initially, she weighed 200 pounds, but after grading all the worksheets, her weight increased to 250 pounds due to stress eating.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of worksheets (Changes from 6 to 20)",
+        "explanation": "As the problem is about the number of worksheets to be graded, the teacher's weight is irrelevant to the solution. We only need to focus on the number of worksheets.",
+        "solution": "The teacher initially had 6 worksheets to grade. She graded 4, leaving her with 2 worksheets. Then, 18 more worksheets were turned in. So, to find the total number of worksheets she has to grade, we add the remaining worksheets (2) and the new worksheets (18). 2 and 18 make 20.",
+        "llm_answer": "20",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_106": {
+      "question": " If he wanted to sell the working games for $6 each, how much money could he earn? ",
+      "answer": "12",
+      "simple": {
+        "passage": " Kaleb had 10 video games but 8 of them weren't working",
+        "explanation": "Kaleb had 10 video games, out of which 8 weren't working. So, the number of working video games is 10 - 8 = 2. If each game is sold for $6, the total money he could earn is 2 * $6 = $12.",
+        "attempt_explanation": 1,
+        "llm_answer": "12"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "50 pounds",
+        "end_value": "70 pounds",
+        "augmented_passage": "Kaleb had 10 video games, weighing a total of 50 pounds, but 8 of them weren't working. After he replaced them, the total weight of his video games became 70 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of working video games (Changes from 10 to 2), Price per game ($6)",
+        "explanation": "As the problem deals with the number of working video games and the price per game, there is no need to consider the weight of the video games when calculating the total earnings.",
+        "solution": "Kaleb had 10 video games, out of which 8 weren't working. So, the number of working video games is 10 - 8 = 2. If each game is sold for $6, the total money he could earn is 2 * $6 = $12.",
+        "llm_answer": "12",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_107": {
+      "question": " If Haley recycled 11 pounds and her friends recycled 16 pounds, how many points did they earn? ",
+      "answer": "9",
+      "simple": {
+        "passage": " Haley and her friends were recycling paper for their class.  For every 3 pounds they recycled they earned one point",
+        "explanation": "First, we need to find out the total weight of the paper recycled. This is done by adding the weight of the paper Haley recycled (11 pounds) to the weight of the paper her friends recycled (16 pounds). This gives us a total of 27 pounds. Since they earn one point for every 3 pounds of paper recycled, we divide the total weight of the paper recycled (27 pounds) by 3. This gives us 9 points.",
+        "attempt_explanation": 1,
+        "llm_answer": "9"
+      },
+      "adversary": {
+        "new_variable": "Humidity",
+        "start_value": "30%",
+        "end_value": "60%",
+        "augmented_passage": "Haley and her friends were recycling paper for their class. Initially, the humidity in the room was 30%. For every 3 pounds they recycled they earned one point. As they continued recycling, the humidity in the room increased to 60%.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Weight of paper recycled (Changes from 0 to 27 pounds)",
+        "explanation": "As the problem deals with the amount of paper recycled, which we already have, there is no need to consider the humidity in the room when calculating the total points earned.",
+        "solution": "First, we need to find out the total weight of the paper recycled. This is done by adding the weight of the paper Haley recycled (11 pounds) to the weight of the paper her friends recycled (16 pounds). This gives us a total of 27 pounds. Since they earn one point for every 3 pounds of paper recycled, we divide the total weight of the paper recycled (27 pounds) by 3. This gives us 9 points.",
+        "llm_answer": "9",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_108": {
+      "question": " If 14 of them left and the rest of his tables had 4 people at each table, how many tables did he have? ",
+      "answer": "2",
+      "simple": {
+        "passage": " A waiter had 22 customers in his section",
+        "explanation": "First, we need to find out how many customers are left after 14 of them left. We do this by subtracting 14 from the total number of customers, which is 22. So, 22 - 14 = 8. Then, we divide the number of remaining customers (8) by the number of people at each table (4). So, 8 / 4 = 2. Therefore, the waiter had 2 tables.",
+        "attempt_explanation": 1,
+        "llm_answer": "2"
+      },
+      "adversary": {
+        "new_variable": "Area",
+        "start_value": "400 square feet",
+        "end_value": "500 square feet",
+        "augmented_passage": "A waiter had 22 customers in his section, which initially covered an area of 400 square feet. As the night progressed, the area of his section expanded to 500 square feet to accommodate more customers.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of customers (Changes from 22 to 8), Number of people at each table (Constant at 4)",
+        "explanation": "As the problem deals with the number of tables, which is determined by the number of customers and the number of people at each table, there is no need to consider the area of the waiter's section when calculating the total number of tables.",
+        "solution": "First, we need to find out how many customers are left after 14 of them left. We do this by subtracting 14 from the total number of customers, which is 22. So, 22 - 14 = 8. Then, we divide the number of remaining customers (8) by the number of people at each table (4). So, 8 / 4 = 2. Therefore, the waiter had 2 tables.",
+        "llm_answer": "2",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_109": {
+      "question": " If he had to pick up 5 trays from one table and 5 trays from another, how many trips will he make? ",
+      "answer": "2",
+      "simple": {
+        "passage": " Ned was helping the cafeteria workers pick up lunch trays, but he could only carry 5 trays at a time",
+        "explanation": "Ned can carry 5 trays at a time. So, for 5 trays from one table, he will make 1 trip. Similarly, for 5 trays from another table, he will make another trip. So, in total, he will make 2 trips.",
+        "attempt_explanation": 1,
+        "llm_answer": "2"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "100 lbs",
+        "end_value": "120 lbs",
+        "augmented_passage": "Ned was helping the cafeteria workers pick up lunch trays, but he could only carry 5 trays at a time. Initially, the trays weighed 100 lbs in total, but as he picked more, the weight increased to 120 lbs.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of trays (Changes from 5 to 10), Number of trips (Changes from 1 to 2)",
+        "explanation": "As the problem deals with the number of trips Ned makes, which is determined by the number of trays he can carry at a time, there is no need to consider the weight of the trays when calculating the total number of trips.",
+        "solution": "Ned can carry 5 trays at a time. So, for 5 trays from one table, he will make 1 trip. Similarly, for 5 trays from another table, he will make another trip. So, in total, he will make 2 trips.",
+        "llm_answer": "2",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_110": {
+      "question": " How much money does he have now? ",
+      "answer": "19",
+      "simple": {
+        "passage": " Henry had 11 dollars.  For his birthday he got 18 more dollars but spent 10 on a new game",
+        "explanation": "Henry initially had 11 dollars. He received 18 dollars more on his birthday, which brings his total to 11 + 18 = 29 dollars. However, he spent 10 dollars on a new game. So, his remaining money is 29 - 10 = 19 dollars.",
+        "attempt_explanation": 1,
+        "llm_answer": "19"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "150 pounds",
+        "end_value": "160 pounds",
+        "augmented_passage": "Henry, who weighed 150 pounds, had 11 dollars. For his birthday he got 18 more dollars but spent 10 on a new game. After eating his birthday cake, his weight increased to 160 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Amount of money (Changes from 11 dollars to 19 dollars)",
+        "explanation": "As the problem deals with the amount of money Henry has, we do not need to consider his weight changes when calculating the total amount of money.",
+        "solution": "Henry initially had 11 dollars. He received 18 dollars more on his birthday, which brings his total to 11 + 18 = 29 dollars. However, he spent 10 dollars on a new game. So, his remaining money is 29 - 10 = 19 dollars.",
+        "llm_answer": "19",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_111": {
+      "question": " If Bianca recycled 24 pounds and her friends recycled 3 pounds, how many points did they earn? ",
+      "answer": "9",
+      "simple": {
+        "passage": " Bianca and her friends were recycling paper for their class.  For every 3 pounds they recycled they earned one point",
+        "explanation": "In order to find the total points earned, we first need to add the total pounds of paper recycled by Bianca and her friends. Bianca recycled 24 pounds and her friends recycled 3 pounds, giving a total of 27 pounds. Since they earn one point for every 3 pounds, we divide the total pounds (27) by 3 to get the total points earned. 27 divided by 3 is 9.",
+        "attempt_explanation": 1,
+        "llm_answer": "9"
+      },
+      "adversary": {
+        "new_variable": "Humidity",
+        "start_value": "30%",
+        "end_value": "50%",
+        "augmented_passage": "Bianca and her friends were recycling paper for their class in a room with 30% humidity. For every 3 pounds they recycled they earned one point. As they continued, the humidity in the room increased to 50%.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Pounds of paper recycled (Changes from 0 to 27)",
+        "explanation": "As the problem deals with the total pounds of paper recycled, which we already have, there is no need to consider the humidity in the room when calculating the total points earned.",
+        "solution": "In order to find the total points earned, we first need to add the total pounds of paper recycled by Bianca and her friends. Bianca recycled 24 pounds and her friends recycled 3 pounds, giving a total of 27 pounds. Since they earn one point for every 3 pounds, we divide the total pounds (27) by 3 to get the total points earned. 27 divided by 3 is 9.",
+        "llm_answer": "9",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_112": {
+      "question": " If she sold 15 of them and then later picked 21 more, how many roses would she have? ",
+      "answer": "56",
+      "simple": {
+        "passage": " A florist had 50 roses",
+        "explanation": "The florist initially had 50 roses. She sold 15 of them, which leaves her with 50 - 15 = 35 roses. She then picked 21 more roses, increasing her total to 35 + 21 = 56 roses.",
+        "attempt_explanation": 1,
+        "llm_answer": "56"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "2 pounds per rose",
+        "end_value": "3 pounds per rose",
+        "augmented_passage": "A florist had 50 roses, each weighing 2 pounds. After adding some water and nutrients, each rose now weighs 3 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of roses (Changes from 50 to 56)",
+        "explanation": "The problem deals with the number of roses, therefore we don't need to consider the weight of the roses when counting the total quantity.",
+        "solution": "The florist initially had 50 roses. She sold 15 of them, which leaves her with 50 - 15 = 35 roses. She then picked 21 more roses, increasing her total to 35 + 21 = 56 roses.",
+        "llm_answer": "56",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_113": {
+      "question": " How many students were in fourth grade at the end? ",
+      "answer": "11",
+      "simple": {
+        "passage": " In fourth grade there were 8 students at the start of the year.  During the year 5 students left and 8 new students came to school",
+        "explanation": "At the start of the year, there were 8 students in fourth grade. During the year, 5 students left, leaving us with 8 - 5 = 3 students. Then, 8 new students joined the class, increasing the total to 3 + 8 = 11 students.",
+        "attempt_explanation": 1,
+        "llm_answer": "11"
+      },
+      "adversary": {
+        "new_variable": "Temperature",
+        "start_value": "70 degrees Fahrenheit",
+        "end_value": "80 degrees Fahrenheit",
+        "augmented_passage": "In fourth grade, where the temperature was 70 degrees Fahrenheit, there were 8 students at the start of the year. During the year, as the temperature rose to 80 degrees Fahrenheit, 5 students left and 8 new students came to school.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of students (Changes from 8 to 11)",
+        "explanation": "As the problem deals with the number of students, which we already have, there is no need to consider the temperature when counting the total number of students.",
+        "solution": "At the start of the year, there were 8 students in fourth grade. During the year, 5 students left, leaving us with 8 - 5 = 3 students. Then, 8 new students joined the class, increasing the total to 3 + 8 = 11 students.",
+        "llm_answer": "11",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_114": {
+      "question": " If only 16 of the carrots were good, how many bad carrots did they have? ",
+      "answer": "25",
+      "simple": {
+        "passage": " Bianca and her mom were picking carrots from their garden.  Bianca picked 26 and her mother picked 15",
+        "explanation": "Bianca and her mom picked a total of 26 + 15 = 41 carrots. If only 16 of these were good, then the number of bad carrots is 41 - 16 = 25.",
+        "attempt_explanation": 1,
+        "llm_answer": "25"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "100 pounds",
+        "end_value": "150 pounds",
+        "augmented_passage": "Bianca and her mom were picking carrots from their garden. Bianca picked 26 and her mother picked 15. The total weight of the carrots initially was 100 pounds, and after picking, it increased to 150 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of carrots (Changes from 26 and 15 to 41)",
+        "explanation": "As the problem deals with the number of good and bad carrots, the weight of the carrots is not relevant. We need to find the total number of carrots picked and then subtract the number of good carrots to find the number of bad carrots.",
+        "solution": "Bianca and her mom picked a total of 26 + 15 = 41 carrots. If only 16 of these were good, then the number of bad carrots is 41 - 16 = 25.",
+        "llm_answer": "25",
+        "attempt_explanation": 1
+      }
+    }
   }
 ]

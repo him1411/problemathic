@@ -444,4 +444,104 @@ Explanation: The problem deals with the number of books, so the weight of the bo
 Solution: Kaleb initially had 34 books. He sold 17 of them, which leaves him with 34 - 17 = 17 books. He then used the money he earned to buy 7 new books. So, the total number of books he has now is 17 (the remaining books) + 7 (new books) = 24 books.
 LLM Answer: 24
 [INFO] Trying manual parse logic after first attempt failed.
- 14%|█▍        | 91/632 [40:39<3:11:25, 21.23s/it] 15%|█▍        | 92/632 [41:03<3:19:02, 22.12s/it] 15%|█▍        | 93/632 [41:26<3:20:35, 22.33s/it] 15%|█▍        | 94/632 [41:46<3:13:34, 21.59s/it] 15%|█▌        | 95/632 [42:08<3:14:38, 21.75s/it] 15%|█▌        | 96/632 [42:32<3:19:23, 22.32s/it]
+ 14%|█▍        | 91/632 [40:39<3:11:25, 21.23s/it] 15%|█▍        | 92/632 [41:03<3:19:02, 22.12s/it] 15%|█▍        | 93/632 [41:26<3:20:35, 22.33s/it] 15%|█▍        | 94/632 [41:46<3:13:34, 21.59s/it] 15%|█▌        | 95/632 [42:08<3:14:38, 21.75s/it] 15%|█▌        | 96/632 [42:32<3:19:23, 22.32s/it] 15%|█▌        | 97/632 [42:55<3:21:24, 22.59s/it] 16%|█▌        | 98/632 [43:19<3:23:46, 22.90s/it] 16%|█▌        | 99/632 [43:38<3:14:43, 21.92s/it] 16%|█▌        | 100/632 [43:58<3:09:40, 21.39s/it][ERROR] AdversarialExplanation -> passage_90, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of carrots (Changes from 0 to 34), Number of good carrots (19)
+Explanation: As the problem deals with the number of bad carrots, we need to first find the total number of carrots picked and then subtract the number of good carrots from this total. The weight of the carrots is irrelevant to this calculation.
+Solution: Olivia and her mom picked a total of 20 + 14 = 34 carrots. If only 19 of these carrots were good, then the number of bad carrots is 34 - 19 = 15.
+LLM Answer: 15
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_91, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of flowers (Changes from 0 to 54), Number of vases (Changes from 0 to 9)
+Explanation: As the problem deals with the number of vases needed to hold the flowers, the weight of the vase is irrelevant. We only need to consider the total number of flowers and how many each vase can hold.
+Solution: First, you need to find the total number of flowers. This is done by adding the number of carnations (7) and roses (47), which gives you 54 flowers. Since each vase can hold 6 flowers, you then divide the total number of flowers (54) by the number of flowers each vase can hold (6). This gives you 9 vases. Therefore, you would need 9 vases to hold all the flowers.
+LLM Answer: 9
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_92, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of candy pieces (Changes from 16 to 7)
+Explanation: As the problem deals with the number of candy pieces, which we already have, there is no need to consider the weight of the candy when counting the total quantity.
+Solution: To find out how many pieces of candy Katie and her sister have left, we first add the number of candies they both had initially. Katie had 10 pieces and her sister had 6 pieces, which makes a total of 16 pieces. Then, we subtract the number of pieces they ate the first night, which is 9. So, 16 minus 9 equals 7. Therefore, they have 7 pieces of candy left.
+LLM Answer: 7
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_93, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of seeds (Changes from 21 to 9 after planting in big garden), Number of seeds per small garden (Constant at 3)
+Explanation: The problem deals with the number of small gardens, which can be calculated by dividing the number of remaining seeds by the number of seeds per small garden. The humidity of the garden is irrelevant to this calculation.
+Solution: Sarah started with 21 seeds. She planted 12 in the big garden. This leaves her with 21 - 12 = 9 seeds. Since she planted 3 seeds in each small garden, the number of small gardens she had is 9 / 3 = 3.
+LLM Answer: 3
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_94, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of video games (Changes from 15 to 6), Price per game ($5)
+Explanation: The problem deals with the number of working video games and their price, so there is no need to consider the weight of the video games when calculating the total earnings.
+Solution: First, we need to find out how many video games are working. Mike had 15 video games and 9 of them weren't working, so we subtract 9 from 15, which gives us 6. These are the working games. If he sells each working game for $5, we multiply the number of working games (6) by the price of each game ($5). 6 times 5 equals 30. So, Mike could earn $30 by selling his working video games.
+LLM Answer: 30
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_95, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of team members (Changes from 15 to 9), Points scored per member (Constant at 3)
+Explanation: As the problem deals with the total points scored, we need to consider the number of team members who showed up and the points each member scored. The weight of the team members is irrelevant in this context.
+Solution: First, we need to find out how many team members showed up to the game. We do this by subtracting the number of team members who didn't show up (6) from the total number of team members (15). This gives us 9 team members who showed up. Then, to find the total number of points scored, we multiply the number of team members who showed up (9) by the number of points each member scored (3). 9 multiplied by 3 equals 27.
+LLM Answer: 27
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_96, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Amount of money Frank has (Changes from 3 dollars to 40 dollars), Cost of toys (Constant at 8 dollars)
+Explanation: As the problem deals with the amount of money Frank has and the cost of toys, there is no need to consider the weight of the piggy bank. We first need to calculate the total amount of money Frank has by adding his savings and his allowance. Then, we divide this total by the cost of one toy to find out how many toys Frank can buy.
+Solution: First, we add the money Frank had saved (3 dollars) to the money he received for his allowance (37 dollars). This gives us a total of 40 dollars. Then, we divide this total by the cost of one toy (8 dollars) to find out how many toys Frank can buy. 40 divided by 8 equals 5.
+LLM Answer: 5
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_97, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of tickets (Changes from 13 to 4), Cost per ticket (Constant at 9 dollars)
+Explanation: As the problem deals with the amount of money spent on ferris wheel tickets, we need to find out how many tickets were used and then multiply by the cost per ticket. The weight of Adam is not relevant to this calculation.
+Solution: First, we need to find out how many tickets Adam used to ride the ferris wheel. He started with 13 tickets and had 4 left, so he used 13 - 4 = 9 tickets. Then, since each ticket costs 9 dollars, we multiply the number of tickets used (9) by the cost per ticket (9 dollars) to find out how much Adam spent. So, 9 tickets * 9 dollars per ticket = 81 dollars.
+LLM Answer: 81
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_98, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of cupcakes (Changes from 39 to 18)
+Explanation: As the problem deals with the number of cupcakes, which we already have, there is no need to consider the temperature of the kitchen when counting the total quantity of packages.
+Solution: Isabel initially had 39 cupcakes. If Todd ate 21 of them, Isabel is left with 39 - 21 = 18 cupcakes. If she puts 3 cupcakes in each package, she can make 18 / 3 = 6 packages.
+LLM Answer: 6
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_99, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of candies (Changes from 67 to 63)
+Explanation: The problem is about the number of candies left after some are eaten. The weight of the candies is irrelevant to this calculation.
+Solution: First, we add the number of candies Janet and her sister received. Janet had 34 candies and her sister had 33 candies. So, 34 + 33 = 67 candies in total. Then, we subtract the number of candies they ate on the first night, which is 4. So, 67 - 4 = 63 candies left.
+LLM Answer: 63
+[INFO] Trying manual parse logic after first attempt failed.
+ 16%|█▌        | 101/632 [44:20<3:09:05, 21.37s/it] 16%|█▌        | 102/632 [44:44<3:17:14, 22.33s/it] 16%|█▋        | 103/632 [45:07<3:17:29, 22.40s/it] 16%|█▋        | 104/632 [45:34<3:29:29, 23.81s/it] 17%|█▋        | 105/632 [45:59<3:31:17, 24.06s/it] 17%|█▋        | 106/632 [46:21<3:26:54, 23.60s/it] 17%|█▋        | 107/632 [46:43<3:21:21, 23.01s/it] 17%|█▋        | 108/632 [47:06<3:20:30, 22.96s/it] 17%|█▋        | 109/632 [47:35<3:35:39, 24.74s/it] 17%|█▋        | 110/632 [48:03<3:44:15, 25.78s/it][ERROR] AdversarialExplanation -> passage_100, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of problems (Changes from 55 to 15)
+Explanation: As the problem deals with the number of problems Faye had for homework, her weight is irrelevant to the calculation. We only need to consider the total number of problems and subtract the ones she completed at school.
+Solution: Faye had a total of 46 math problems and 9 science problems for homework, which makes a total of 55 problems (46 + 9 = 55). If she finished 40 of the problems at school, then she would have 15 problems left to do for homework (55 - 40 = 15).
+LLM Answer: 15
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_101, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of sodas (Changes from 4 and 44 to 48), Number of sodas each shelf can hold (6)
+Explanation: As the problem deals with the number of shelves that would be filled up, we need to consider the total number of sodas and the capacity of each shelf. The weight of the sodas is irrelevant in this context.
+Solution: First, we need to find out the total number of sodas Cody bought. He bought 4 regular sodas and 44 diet sodas, which totals to 48 sodas (4+44). His fridge can hold 6 sodas on each shelf. So, to find out how many shelves he would fill up, we divide the total number of sodas by the number of sodas each shelf can hold. 48 divided by 6 equals 8. Therefore, Cody would fill up 8 shelves.
+LLM Answer: 8
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_102, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of flowers (Changes from 0 to 12)
+Explanation: As the problem deals with the number of flowers, which we already have, there is no need to consider the weight of Katie or the flowers when counting the total quantity.
+Solution: Katie picked a total of 3 tulips and 9 roses, which makes 12 flowers in total. If she only used 10 of these flowers, then the number of extra flowers she picked is found by subtracting the number of flowers used (10) from the total number of flowers picked (12). So, 12 - 10 equals 2. Therefore, Katie picked 2 extra flowers.
+LLM Answer: 2
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_103, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of apples (Changes from 62 to 54), Number of apples per pie (9)
+Explanation: As the problem deals with the number of pies that can be made, we only need to consider the number of apples and the number of apples per pie. The weight of the apples is irrelevant in this case.
+Solution: First, we need to find out how many apples are left after the cafeteria handed out 8 to students. So, we subtract 8 from 62 which gives us 54. Then, since each pie takes 9 apples, we divide the number of remaining apples (54) by the number of apples per pie (9). This gives us 6 pies.
+LLM Answer: 6
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_104, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of files (Changes from 82 to 45), Number of files per folder (Constant at 5)
+Explanation: The problem is asking for the number of folders, which is determined by the number of files and the number of files per folder. The weight of the files is irrelevant to this calculation.
+Solution: First, we need to find out how many files Wendy had left after deleting some. She started with 82 files and deleted 37, so she had 82 - 37 = 45 files left. Then, since she put these files into folders with 5 files in each one, we divide the number of files by the number of files per folder to find the number of folders. So, 45 / 5 = 9 folders.
+LLM Answer: 9
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_105, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of worksheets (Changes from 6 to 20)
+Explanation: The problem deals with the number of worksheets, so the teacher's weight is irrelevant to the solution. We only need to consider the initial number of worksheets, the number graded, and the number of new worksheets turned in.
+Solution: The teacher initially had 6 worksheets to grade. She graded 4, leaving her with 2 worksheets. Then, 18 more worksheets were turned in. So, to find the total number of worksheets she has to grade, we add the remaining worksheets (2) and the new worksheets (18). 2 and 18 make 20.
+LLM Answer: 20
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_106, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of working video games (Changes from 10 to 2), Price per game ($6)
+Explanation: As the problem deals with the amount of money Kaleb could earn from selling his working video games, the weight of the video games is irrelevant. We need to focus on the number of working video games and the price per game.
+Solution: Kaleb had 10 video games, out of which 8 weren't working. So, the number of working video games is 10 - 8 = 2. If each game is sold for $6, the total money he could earn is 2 * $6 = $12.
+LLM Answer: 12
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_107, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Total weight of recycled paper (Changes from 0 to 27 pounds)
+Explanation: As the problem deals with the total weight of paper recycled, which we already have, there is no need to consider the humidity in the room when calculating the total points earned.
+Solution: First, we need to find out the total weight of the paper recycled. This is done by adding the weight of the paper Haley recycled (11 pounds) to the weight of the paper her friends recycled (16 pounds). This gives us a total of 27 pounds. Since they earn one point for every 3 pounds of paper recycled, we divide the total weight of the paper recycled (27 pounds) by 3. This gives us 9 points.
+LLM Answer: 9
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_108, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of customers (Changes from 22 to 8), People per table (Constant at 4)
+Explanation: The problem deals with the number of tables, which can be found by dividing the number of customers by the number of people per table. The area of the section is irrelevant to this calculation.
+Solution: First, we need to find out how many customers are left after 14 of them left. We do this by subtracting 14 from the total number of customers, which is 22. So, 22 - 14 = 8. Then, we divide the number of remaining customers (8) by the number of people at each table (4). So, 8 / 4 = 2. Therefore, the waiter had 2 tables.
+LLM Answer: 2
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_109, Attempt: 1, retry_flag: True, Error: Invalid json output: Relevant Variables Extracted: Number of trays (Changes from 5 to 10)
+Explanation: As the problem deals with the number of trays Ned can carry at a time, which we already have, there is no need to consider the weight of the trays when calculating the total number of trips.
+Solution: Ned can carry 5 trays at a time. So, for 5 trays from one table, he will make 1 trip. Similarly, for 5 trays from another table, he will make another trip. So, in total, he will make 2 trips.
+LLM Answer: 2
+[INFO] Trying manual parse logic after first attempt failed.
+ 18%|█▊        | 111/632 [48:25<3:34:34, 24.71s/it] 18%|█▊        | 112/632 [48:48<3:30:00, 24.23s/it] 18%|█▊        | 113/632 [49:07<3:15:19, 22.58s/it] 18%|█▊        | 114/632 [49:27<3:08:43, 21.86s/it] 18%|█▊        | 115/632 [49:48<3:06:03, 21.59s/it]
