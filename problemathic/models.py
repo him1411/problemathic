@@ -1,6 +1,5 @@
 # Load packages
 from openai import OpenAI as OriginalOpenAI
-
 from langchain_openai import OpenAI, ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 

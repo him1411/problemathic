@@ -2,7 +2,7 @@ import os
 import json
 import time
 from tqdm.auto import tqdm
-
+from langchain.chat_models import AzureChatOpenAI
 from typing import Union
 from langchain_core.language_models.base import BaseLanguageModel
 
@@ -17,18 +17,32 @@ class AdversarialMathDataGen:
                  api_key,
                  max_retries=1,
                  wait_time=10,
-                 debug=False
+                 debug=False,
+                 keys=dict(),
+                 azure_api = False
                  ) -> None:
         self.use_langchain = use_langchain_core
         self.debug = debug
-
+        self.keys = keys
         # Set Model
         if model == 'openai_gpt4_chat':
-            model = Model(use_langchain=self.use_langchain).get_openai_chat_model(temperature=0.3,
-                                                                             api_key=api_key,
-                                                                             model="gpt-4",
-                                                                             max_tokens=2048)
-            self.llm = model
+            if azure_api:
+                self.llm = AzureChatOpenAI(
+                            deployment_name="gpt-4",
+                            openai_api_version="2023-03-15-preview",
+                            max_tokens=2048,
+                            temperature=0.3,
+                            max_retries=max_retries,
+                            request_timeout=5,
+                            **self.keys
+                        )
+            else:
+                model = Model(use_langchain=self.use_langchain).get_openai_chat_model(temperature=0.3,
+                                                                                api_key=api_key,
+                                                                                model="gpt-4",
+                                                                                max_tokens=2048)
+                self.llm = model
+            
         elif model == 'openai_gpt4_completion':
             model = Model(use_langchain=self.use_langchain).get_openai_model(temperature=0.7,
                                                                              api_key=api_key,
