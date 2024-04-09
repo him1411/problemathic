@@ -2758,5 +2758,125 @@
         "attempt_explanation": 1
       }
     }
+  },
+  {
+    "passage_115": {
+      "question": " If she wants to arrange all of the pies in rows of 5 pies each, how many rows will she have?",
+      "answer": "6",
+      "simple": {
+        "passage": "Mrs.  Hilt baked pies last weekend for a holiday dinner.  She baked 16 pecan pies and 14 apples pies",
+        "explanation": "First, we need to find out the total number of pies Mrs. Hilt baked. She baked 16 pecan pies and 14 apple pies, which gives us a total of 30 pies (16 + 14 = 30). Then, to find out how many rows of 5 pies each she can make, we divide the total number of pies by the number of pies per row. So, 30 pies divided by 5 pies per row gives us 6 rows (30 / 5 = 6).",
+        "attempt_explanation": 1,
+        "llm_answer": "6"
+      },
+      "adversary": {
+        "new_variable": "Temperature",
+        "start_value": "68 degrees Fahrenheit",
+        "end_value": "75 degrees Fahrenheit",
+        "augmented_passage": "Mrs. Hilt baked pies last weekend for a holiday dinner. The kitchen started at 68 degrees Fahrenheit. She baked 16 pecan pies and 14 apples pies, and the temperature rose to 75 degrees Fahrenheit.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of pies (Changes from 16 pecan pies and 14 apple pies to 30 pies in total)",
+        "explanation": "As the problem deals with the number of pies, which we already have, there is no need to consider the temperature of the kitchen when counting the total number of rows.",
+        "solution": "First, we need to find out the total number of pies Mrs. Hilt baked. She baked 16 pecan pies and 14 apple pies, which gives us a total of 30 pies (16 + 14 = 30). Then, to find out how many rows of 5 pies each she can make, we divide the total number of pies by the number of pies per row. So, 30 pies divided by 5 pies per row gives us 6 rows (30 / 5 = 6).",
+        "llm_answer": "6",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_116": {
+      "question": " How much money does Elise have left?",
+      "answer": "1",
+      "simple": {
+        "passage": "Elise had $8.  Then she saved $13 from her allowance and spent $2 on a comic book and $18 on a puzzle",
+        "explanation": "Elise initially had $8. She added $13 to her savings from her allowance. This gives a total of $8 + $13 = $21. She then spent $2 on a comic book and $18 on a puzzle, which totals to $2 + $18 = $20. To find out how much money she has left, we subtract her total spending from her total savings. So, $21 - $20 = $1. Therefore, Elise has $1 left.",
+        "attempt_explanation": 1,
+        "llm_answer": "1"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "80 pounds",
+        "end_value": "85 pounds",
+        "augmented_passage": "Elise had $8 and weighed 80 pounds. Then she saved $13 from her allowance and spent $2 on a comic book and $18 on a puzzle, gaining 5 pounds to weigh 85 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Amount of money (Changes from $8 to $1)",
+        "explanation": "As the problem deals with the amount of money Elise has, we do not need to consider her weight changes when calculating her remaining money.",
+        "solution": "Elise initially had $8. She added $13 to her savings from her allowance. This gives a total of $8 + $13 = $21. She then spent $2 on a comic book and $18 on a puzzle, which totals to $2 + $18 = $20. To find out how much money she has left, we subtract her total spending from her total savings. So, $21 - $20 = $1. Therefore, Elise has $1 left.",
+        "llm_answer": "1",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_117": {
+      "question": " If he already painted 2 rooms, how much longer will he take to paint the rest? ",
+      "answer": "63",
+      "simple": {
+        "passage": " A painter needed to paint 11 rooms in a building.  Each room takes 7 hours to paint",
+        "explanation": "The painter has already painted 2 rooms out of 11, so he has 11 - 2 = 9 rooms left to paint. Each room takes 7 hours to paint, so the painter will take 9 * 7 = 63 hours to paint the rest of the rooms.",
+        "attempt_explanation": 1,
+        "llm_answer": "63"
+      },
+      "adversary": {
+        "new_variable": "Humidity",
+        "start_value": "30% humidity",
+        "end_value": "50% humidity",
+        "augmented_passage": "A painter needed to paint 11 rooms in a building. Each room takes 7 hours to paint. The humidity in the building starts at 30% and increases to 50% by the time he finishes.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of rooms (Changes from 11 to 9), Time to paint each room (Constant at 7 hours)",
+        "explanation": "As the problem deals with the time taken to paint the rooms, the humidity in the building is irrelevant to the calculation. We only need to consider the number of rooms left to paint and the time taken to paint each room.",
+        "solution": "The painter has already painted 2 rooms out of 11, so he has 9 rooms left to paint. Each room takes 7 hours to paint, so the painter will take 9 * 7 = 63 hours to paint the rest of the rooms.",
+        "llm_answer": "63",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_118": {
+      "question": " If they were split into groups of 4 how many groups could they make? ",
+      "answer": "8",
+      "simple": {
+        "passage": " The schools debate team had 28 boys and 4 girls on it",
+        "explanation": "In order to find out how many groups of 4 can be made, we add the number of boys (28) and girls (4) to get the total number of students. This gives us 32 students. We then divide this total by the number of students per group (4). 32 divided by 4 gives us 8 groups.",
+        "attempt_explanation": 1,
+        "llm_answer": "8"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "100 pounds",
+        "end_value": "120 pounds",
+        "augmented_passage": "The schools debate team had 28 boys and 4 girls on it, with a combined weight of 100 pounds. After a few months of training and growth, their combined weight increased to 120 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of students (Changes from 28 boys and 4 girls to 32 total)",
+        "explanation": "As the problem deals with the number of groups that can be made, we only need to consider the total number of students. The weight of the students is irrelevant in this context.",
+        "solution": "In order to find out how many groups of 4 can be made, we add the number of boys (28) and girls (4) to get the total number of students. This gives us 32 students. We then divide this total by the number of students per group (4). 32 divided by 4 gives us 8 groups.",
+        "llm_answer": "8",
+        "attempt_explanation": 1
+      }
+    }
+  },
+  {
+    "passage_119": {
+      "question": " If she spent 8 minutes on each piece furniture putting it together, how many minutes did it take her to finish? ",
+      "answer": "32",
+      "simple": {
+        "passage": " Maria bought 2 new chairs and 2 new tables for her house",
+        "explanation": "Maria bought 2 chairs and 2 tables, which is a total of 4 pieces of furniture. If she spent 8 minutes on each piece of furniture, we multiply the total number of furniture (4) by the time spent on each (8). 4 multiplied by 8 equals 32.",
+        "attempt_explanation": 1,
+        "llm_answer": "32"
+      },
+      "adversary": {
+        "new_variable": "Weight",
+        "start_value": "1000 pounds",
+        "end_value": "1200 pounds",
+        "augmented_passage": "Maria bought 2 new chairs and 2 new tables for her house, adding 1000 pounds to the total weight of her furniture. After adding some more items, the total weight of the furniture in her house is now 1200 pounds.",
+        "attempt_for_stage_one_step_one": 1,
+        "relevant_variables_extracted": "Number of furniture pieces (4), Time spent on each piece (8 minutes)",
+        "explanation": "The problem deals with the time Maria spent assembling furniture. The total weight of the furniture is irrelevant to the time spent assembling. We need to focus on the number of furniture pieces and the time spent on each.",
+        "solution": "Maria bought 2 chairs and 2 tables, which is a total of 4 pieces of furniture. If she spent 8 minutes on each piece of furniture, we multiply the total number of furniture (4) by the time spent on each (8). 4 multiplied by 8 equals 32.",
+        "llm_answer": "32 minutes",
+        "attempt_explanation": 1
+      }
+    }
   }
 ]
