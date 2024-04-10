@@ -31,7 +31,7 @@ def convert_problemathic_aversarial_data(data_path, output_path, difficulty_type
             fout.write(json.dumps({
                 "dataset": f"problemathic_adv_{difficulty_type}",
                 "id": f"passage_{idx}",
-                "prompt": f'<<Passage>>{row["input_passage"]}<<Question>>{row["question"]}',
+                "prompt": f'<<Passage>>{row["augmented_passage"]}<<Question>>{row["question"]}',
                 "completion": 
                 f'<<Reasoning>>{row["explanation_adv"]}<<RelevantVariables>>{row["relevant_variables_extracted"]}<<Explanation>>{row["solution"]}<<FinalAnswer>>{row["answer"]}'
                 }) + "\n")
