@@ -20,9 +20,10 @@ root_path = "./"
 
 # Set Constants
 input_tuples = [
-    # ("./dataset/curated/stage1_train_processed_data.json", "./dataset/generated/json/stage_one_temp.json", 1),
+    # ("./dataset/curated/stage1_train_processed_data.json", "./dataset/generated/json/stage_one.json", 1),
     # ("./dataset/curated/stage2_train_processed_data.json", "./dataset/generated/json/stage_two.json", 2),
-    ("./dataset/curated/stage3_train_processed_data.json", "./dataset/generated/json/stage_three.json", 3)
+    # ("./dataset/curated/stage3_train_processed_data.json", "./dataset/generated/json/stage_three.json", 3),
+    ("./dataset/curated/gsm_8k_test_processed_data.json", "./dataset/generated/json/gsm_8k_test_processed_data.json", 3)
     ]
 
 start_idx=0
