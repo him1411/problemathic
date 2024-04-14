@@ -1,0 +1,100 @@
+/Users/shreyas.verma/anaconda3/envs/troubleshooter/lib/python3.12/site-packages/langchain/chat_models/__init__.py:31: LangChainDeprecationWarning: Importing chat models from langchain is deprecated. Importing from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+`from langchain_community.chat_models import AzureChatOpenAI`.
+
+To install langchain-community run `pip install -U langchain-community`.
+  warnings.warn(
+  0%|          | 0/1318 [00:00<?, ?it/s]  0%|          | 1/1318 [03:05<67:41:10, 185.02s/it]  0%|          | 2/1318 [05:02<53:05:15, 145.22s/it]  0%|          | 3/1318 [09:47<76:19:41, 208.96s/it]  0%|          | 4/1318 [11:45<63:10:22, 173.08s/it]  0%|          | 5/1318 [16:29<77:43:27, 213.11s/it]  0%|          | 6/1318 [20:14<79:11:00, 217.27s/it]  1%|          | 7/1318 [22:35<70:01:13, 192.28s/it]  1%|          | 8/1318 [27:42<83:12:37, 228.67s/it]  1%|          | 9/1318 [33:04<93:49:06, 258.02s/it]  1%|          | 10/1318 [37:04<91:43:48, 252.47s/it]  1%|          | 11/1318 [39:32<80:02:25, 220.46s/it]  1%|          | 12/1318 [44:09<86:13:27, 237.68s/it][ERROR] StageTwoOrThree -> passage_0, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_0, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_0, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_0, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_1, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_1, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_1, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_2, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_2, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_2, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_2, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_2, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_2, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_2, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_3, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_3, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_3, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_4, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_4, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_4, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_4, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_4, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_4, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_4, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_5, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_5, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_5, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_5, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_5, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_5, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_6, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_6, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_6, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_7, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_7, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_7, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_7, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_7, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_7, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_7, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_7, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_8, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_8, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_8, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_8, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_8, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_8, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_8, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_8, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_9, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_9, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_9, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_9, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_9, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_9, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_10, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_10, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_10, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] StageTwoOrThree -> passage_11, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_11, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_11, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_11, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] AdversarialExplanation -> passage_11, Attempt: 1, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_11, Attempt: 2, retry_flag: True, Error: Request timed out.
+[INFO] Trying manual parse logic after first attempt failed.
+[ERROR] AdversarialExplanation -> passage_11, Attempt: 3, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_12, Attempt: 1, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_12, Attempt: 2, retry_flag: True, Error: Request timed out.
+[ERROR] SimpleExplanation -> passage_12, Attempt: 3, retry_flag: True, Error: Request timed out.
+  1%|          | 13/1318 [47:56<84:57:49, 234.38s/it]  1%|          | 14/1318 [51:55<85:24:40, 235.80s/it]  1%|          | 15/1318 [55:40<84:09:43, 232.53s/it]  1%|          | 16/1318 [1:00:44<91:56:06, 254.20s/it]  1%|▏         | 17/1318 [1:01:17<67:43:42, 187.41s/it]  1%|▏         | 18/1318 [1:05:01<71:40:34, 198.49s/it]  1%|▏         | 19/1318 [1:07:05<63:31:45, 176.06s/it]/Users/shreyas.verma/anaconda3/envs/troubleshooter/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
