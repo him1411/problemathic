@@ -13,3 +13,20 @@ OPENAI_API_KEY=YOUR_KEY
 ```console
 python scripts/create_stage_data.py
 ```
+
+
+## BibTeX Entry and Citation Info
+
+If you find our work useful, please cite our work: 
+
+```bibtex
+@misc{anantheswaran2024investigatingrobustnessllmsmath,
+      title={Investigating the Robustness of LLMs on Math Word Problems}, 
+      author={Ujjwala Anantheswaran and Himanshu Gupta and Kevin Scaria and Shreyas Verma and Chitta Baral and Swaroop Mishra},
+      year={2024},
+      eprint={2406.15444},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2406.15444}, 
+}
+```
